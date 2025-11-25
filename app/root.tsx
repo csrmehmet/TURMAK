@@ -5,10 +5,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  
 } from "react-router";
 
 import type { Route } from "./+types/root";
 import "./app.css";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -32,8 +36,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+       <body className="min-h-screen bg-white text-gray-900 font-inter">
+        {/* NAVBAR */}
+        <Navbar />
+
+        {/* PAGE CONTENT */}
+        <main className="pt-20 container mx-auto px-4">
+          {children}
+        </main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
