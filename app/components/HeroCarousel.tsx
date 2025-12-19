@@ -43,7 +43,6 @@ const slides = [
 export default function HeroCarousel() {
   return (
     <section className="relative w-full h-[70vh] md:h-[80vh] text-white">
-
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -93,7 +92,6 @@ export default function HeroCarousel() {
           </SwiperSlide>
         ))}
       </Swiper>
-
     </section>
   );
 }
